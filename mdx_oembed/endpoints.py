@@ -13,4 +13,7 @@ ENDPOINTS = {
     'vimeo': oembed.OEmbedEndpoint('http://vimeo.com/api/oembed.json', [
         'http://vimeo.com/*',
     ]),
+    'soundcloud': oembed.OEmbedEndpoint('http://soundcloud.com/oembed', [
+        'http://soundcloud.com/*',
+    ]),
 }
