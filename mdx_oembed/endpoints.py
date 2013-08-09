@@ -14,6 +14,6 @@ ENDPOINTS = {
         'http://vimeo.com/*',
     ]),
     'soundcloud': oembed.OEmbedEndpoint('http://soundcloud.com/oembed', [
-        'http://soundcloud.com/*',
+        'https?://soundcloud.com/*',
     ]),
 }

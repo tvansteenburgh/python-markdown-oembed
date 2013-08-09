@@ -30,5 +30,7 @@ class OEmbedLinkPattern(Pattern):
             response = self.consumer.embed(url)
         except oembed.OEmbedNoEndpoint:
             return None
+        except:
+            return u"[Couldn't fetch content for {0} - Is the URL correct?]".format(url)
         else:
             return response['html']
