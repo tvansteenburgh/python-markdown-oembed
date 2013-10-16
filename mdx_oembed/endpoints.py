@@ -4,8 +4,8 @@ import oembed
 
 ENDPOINTS = {
     'youtube': oembed.OEmbedEndpoint('http://www.youtube.com/oembed', [
-        'http://(*.)?youtube.com/*',
-        'http://youtu.be/*',
+        'https?://(*.)?youtube.com/*',
+        'https?://youtu.be/*',
     ]),
     'flickr': oembed.OEmbedEndpoint('http://www.flickr.com/services/oembed/', [
         'http://*.flickr.com/*',

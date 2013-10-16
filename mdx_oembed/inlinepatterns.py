@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 import logging
+import re
+
 from markdown.inlinepatterns import Pattern
 import oembed
 
@@ -10,6 +12,7 @@ LOG = logging.getLogger(__name__)
 OEMBED_LINK_RE = r'\!\[([^\]]*)\]\((https?://[^\)]*)' \
                  r'(?<!png)(?<!jpg)(?<!jpeg)(?<!gif)\)'
 
+SRC_SCHEME_RE = re.compile(r'src="https?:')
 
 class OEmbedLinkPattern(Pattern):
 
@@ -21,6 +24,9 @@ class OEmbedLinkPattern(Pattern):
         html = self.get_oembed_html_for_match(match)
         if html is None:
             return None
+        # make src urls protocol-relative
+        html = SRC_SCHEME_RE.sub('src="', html)
+
         placeholder = self.markdown.htmlStash.store(html, safe=True)
         return placeholder
 
