@@ -3,7 +3,7 @@ import oembed
 
 
 ENDPOINTS = {
-    'youtube': oembed.OEmbedEndpoint('http://www.youtube.com/oembed', [
+    'youtube': oembed.OEmbedEndpoint('https://www.youtube.com/oembed', [
         'https?://(*.)?youtube.com/*',
         'https?://youtu.be/*',
     ]),
